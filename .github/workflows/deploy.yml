@@ -1,54 +1,23 @@
-# ============================================================
-# GitHub Actions CI/CD Pipeline
-# File: .github/workflows/deploy.yml
-# ============================================================
-# 'name' is just the display name of this pipeline
 name: Deploy JD2Ready AI to Hugging Face
-# 'on' means "when should this pipeline run"
+
 on:
-  push:                    # Trigger: when someone pushes code
+  push:
     branches:
-      - main               # Only run when pushing to the 'main' branch
-  workflow_dispatch:       # Also allow manual triggering from GitHub UI
-# 'jobs' is the list of tasks to run
+      - main
+  workflow_dispatch:
+
 jobs:
-  
-  # 'deploy' is the name of our job (you can name it anything)
   deploy:
-    
-    # 'runs-on' specifies which computer runs our pipeline
-    # ubuntu-latest = a fresh Linux computer in GitHub's cloud (free)
     runs-on: ubuntu-latest
-    
-    # 'steps' are the individual actions to take, in order
     steps:
-      
-      # Step 1: Check out (download) your code from GitHub onto the runner machine
-      - name: Checkout Repository
-        uses: actions/checkout@v3     # 'uses' loads a pre-built action
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0              # Get the full git history (needed for some operations)
-          lfs: true                   # Support for large files
-      
-      # Step 2: Install a special tool called 'git-lfs' for handling large files
-      - name: Setup Git LFS
-        run: git lfs install          # 'run' executes a shell command
-      
-      # Step 3: Push your code to Hugging Face Spaces
-      # This uses a pre-built action made specifically for this purpose
-      - name: Deploy to Hugging Face Spaces
+          fetch-depth: 0
+
+      - name: Push to Hugging Face
         uses: JacobLinCool/huggingface-sync@v1
         with:
-          # 'github-token' authenticates with GitHub to read your repo
-          github-token: ${{ secrets.GITHUB_TOKEN }}    # Auto-provided by GitHub
-          
-          # 'user-token' authenticates with Hugging Face
-          # ${{ secrets.HF_TOKEN }} reads the secret you saved in Step 3.3
-          user-token: ${{ secrets.HF_TOKEN }}
-          
-          # 'space' tells the action which Hugging Face Space to deploy to
-          # Format: your-hf-username/your-space-name
-          space: sadhiqtest-glitch/jd2ready.ai          # ⚠️ CHANGE THIS!
-          
-          # 'branch' says which branch of GitHub to deploy from
-          branch: main
+          github: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.HF_TOKEN }}
+          space: Sadhiqtest/JD2Ready.ai
