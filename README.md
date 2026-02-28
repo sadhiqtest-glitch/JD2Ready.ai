@@ -1,24 +1,20 @@
-# 🎯 SkillScan AI
+---
+title: JD2Ready AI
+emoji: 🎯
+colorFrom: blue
+colorTo: purple
+sdk: streamlit
+sdk_version: 1.32.0
+app_file: app.py
+pinned: false
+---
 
-> AI-powered job skills gap analyzer. Paste any job description, get your match score and a 30-day learning roadmap. Instantly. Free.
+# 🎯 JD2Ready AI
 
-## Live Demo
-[Click here to try it →](YOUR_HUGGINGFACE_URL_GOES_HERE)
-
-## What It Does
-- Analyzes your skills against any job description
-- Gives you a match percentage score
-- Lists skills you already have ✅
-- Lists skills you need to learn ❌
-- Provides a personalized 30-day learning roadmap
-- Gives application tips tailored to the role
+AI-powered job description analyzer. Paste any JD, get your match score and 30-day learning roadmap. Free.
 
 ## Tech Stack
-- **AI:** Groq API (Llama 3)
-- **Frontend:** Streamlit
-- **Hosting:** Hugging Face Spaces
-- **CI/CD:** GitHub Actions
-- **Monitoring:** UptimeRobot
-
-## Built With
-100% free tools. No credit card required.
+- Groq API (Llama 3)
+- Streamlit
+- Hugging Face Spaces
+- GitHub Actions CI/CD
