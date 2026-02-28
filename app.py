@@ -173,7 +173,7 @@ Be honest, specific, and encouraging. Use only free learning resources (YouTube,
                             "content": prompt     # The actual message content
                         }
                     ],
-                    model="llama3-8b-8192",       # Free, fast model
+                    model="llama-3.3-70b-versatile",       # Free, fast model
                     max_tokens=2000,               # Maximum length of AI response
                     temperature=0.7                # Creativity level
                 )
