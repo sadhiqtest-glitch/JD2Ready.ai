@@ -48,7 +48,7 @@ jobs:
           
           # 'space' tells the action which Hugging Face Space to deploy to
           # Format: your-hf-username/your-space-name
-          space: Sadhiqtestjd2ready.ai          # ⚠️ CHANGE THIS!
+          space: sadhiqtest-glitch/jd2ready.ai          # ⚠️ CHANGE THIS!
           
           # 'branch' says which branch of GitHub to deploy from
           branch: main
